@@ -1,6 +1,14 @@
 {
     "name": "ngx-subscribable",
     "version": "0.0.0",
+    "author": {
+        "name": "Pavel Dymkov",
+        "email": "dymkov86@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PavelDymkov/ngx-subscribable.git"
+    },
     "scripts": {
         "build": "ng build --prod",
         "prettier": "prettier --write .",

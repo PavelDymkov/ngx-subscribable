@@ -1,6 +1,6 @@
 {
     "name": "ngx-subscribable",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "peerDependencies": {
         "@angular/core": "^10.1.0",
         "rxjs": "~6.6.0"
