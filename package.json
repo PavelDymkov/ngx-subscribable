@@ -1,43 +1,48 @@
 {
-  "name": "ngx-subscribable",
-  "version": "0.0.0",
-  "author": {
-    "name": "Pavel Dymkov",
-    "email": "dymkov86@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PavelDymkov/ngx-subscribable.git"
-  },
-  "scripts": {
-    "build": "ng build --prod",
-    "prettier": "prettier --write .",
-    "start": "ng serve",
-    "test": "ng test"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "~11.0.4",
-    "@angular/common": "~11.0.4",
-    "@angular/compiler": "~11.0.4",
-    "@angular/core": "~11.0.4",
-    "@angular/forms": "~11.0.4",
-    "@angular/platform-browser": "~11.0.4",
-    "@angular/platform-browser-dynamic": "~11.0.4",
-    "@angular/router": "~11.0.4",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1100.4",
-    "@angular/cli": "~11.0.4",
-    "@angular/compiler-cli": "~11.0.4",
-    "@types/node": "^12.11.1",
-    "ng-packagr": "^11.0.3",
-    "prettier": "^2.1.1",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
-  }
+    "name": "ngx-subscribable",
+    "version": "0.0.0",
+    "author": {
+        "name": "Pavel Dymkov",
+        "email": "dymkov86@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PavelDymkov/ngx-subscribable.git"
+    },
+    "scripts": {
+        "build": "ng build --prod",
+        "prettier": "prettier --write .",
+        "start": "ng serve test",
+        "test": "ng build test && mocha projects/test/test.js"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "~11.0.4",
+        "@angular/common": "~11.0.4",
+        "@angular/compiler": "~11.0.4",
+        "@angular/core": "~11.0.4",
+        "@angular/forms": "~11.0.4",
+        "@angular/platform-browser": "~11.0.4",
+        "@angular/platform-browser-dynamic": "~11.0.4",
+        "@angular/router": "~11.0.4",
+        "connect": "^3.7.0",
+        "mocha": "^8.2.1",
+        "puppeteer": "^5.5.0",
+        "puppeteer-io": "^1.12.0",
+        "rxjs": "~6.6.0",
+        "serve-static": "^1.14.1",
+        "tslib": "^2.0.0",
+        "zone.js": "~0.10.2"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~0.1100.4",
+        "@angular/cli": "~11.0.4",
+        "@angular/compiler-cli": "~11.0.4",
+        "@types/node": "^12.11.1",
+        "ng-packagr": "^11.0.3",
+        "prettier": "^2.1.1",
+        "ts-node": "~8.3.0",
+        "tslint": "~6.1.0",
+        "typescript": "~4.0.2"
+    }
 }
