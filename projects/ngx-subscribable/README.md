@@ -1,25 +1,76 @@
 # NgxSubscribable
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Example:
 
-## Code scaffolding
+```ts
+import { Component, OnInit } from "@angular/core";
+import { SubscribableComponent } from "ngx-subscribable";
 
-Run `ng generate component component-name --project ngx-subscribable` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-subscribable`.
+@Component({
+    selector: "app-foo",
+    template: `Content`,
+})
+export class FooComponent extends SubscribableComponent implements OnInit {
+    constructor(
+        // Service with some observable for subscribe
+        someService,
+    ) {}
 
-> Note: Don't forget to add `--project ngx-subscribable` or else it will be added to the default project in your `angular.json` file.
+    ngOnInit(): void {
+        // Property that SubscribableComponent provided
+        this.subscriptions = [
+            someService.observable
+                .pipe(
+                    finalize(() => {
+                        // Will be call when component will destroyed
+                    }),
+                )
+                .subscribe(),
+        ];
+    }
+}
+```
 
-## Build
+Don't forget call ngOnDestroy.super() if define ngOnDestroy:
 
-Run `ng build ngx-subscribable` to build the project. The build artifacts will be stored in the `dist/` directory.
+```ts
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { SubscribableComponent } from "ngx-subscribable";
 
-## Publishing
+@Component({
+    selector: "app-foo",
+    template: `Content`,
+})
+export class FooComponent
+    extends SubscribableComponent
+    implements OnInit, OnDestroy {
+    constructor(someService) {}
 
-After building your library with `ng build ngx-subscribable`, go to the dist folder `cd dist/ngx-subscribable` and run `npm publish`.
+    ngOnInit(): void {
+        this.subscriptions = [someService.observable.subscribe()];
+    }
 
-## Running unit tests
+    ngOnDestroy(): void {
+        super.ngOnDestroy();
 
-Run `ng test ngx-subscribable` to execute the unit tests via [Karma](https://karma-runner.github.io).
+        // do something
+    }
+}
+```
 
-## Further help
+Using directive:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```ts
+import { Component, OnInit } from "@angular/core";
+import { SubscribableComponent } from "ngx-subscribable";
+import { from } from "rxjs";
+
+@Directive({
+    selector: "app-foo",
+})
+export class FooDirective extends SubscribableDirective implements OnInit {
+    ngOnInit(): void {
+        this.subscriptions = [from(document, "click").subscribe()];
+    }
+}
+```
