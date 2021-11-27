@@ -19,10 +19,7 @@ import { SubscribableComponent } from "ngx-subscribable";
     template: `Content`,
 })
 export class MyComponent extends SubscribableComponent implements OnInit {
-    constructor(
-        // service with some observable for subscribing
-        private someService: SomeService,
-    ) {
+    constructor(private someService: SomeService) {
         // don't forget to call `super` if using a constructor
         super();
     }
