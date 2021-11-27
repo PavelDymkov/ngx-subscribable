@@ -9,6 +9,7 @@
     "include": ["./src/**/*.ts"],
 
     "angularCompilerOptions": {
+        "compilationMode": "partial",
         "skipTemplateCodegen": true,
         "strictInjectionParameters": true,
         "strictMetadataEmit": true,
