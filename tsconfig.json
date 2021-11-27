@@ -1,22 +1,15 @@
 {
-    "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-        "outDir": "./dist/out-tsc",
-        "sourceMap": true,
-        "declaration": false,
+        "strict": true,
+        "skipLibCheck": true,
         "downlevelIteration": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "importHelpers": true,
-        "target": "es2015",
-        "module": "es2020",
-        "lib": ["es2018", "dom"],
+        "target": "ES2020",
         "paths": {
-            "ngx-subscribable": [
-                "dist/ngx-subscribable/ngx-subscribable",
-                "dist/ngx-subscribable"
-            ]
+            "ngx-subscribable": ["package"]
         }
     }
 }

@@ -5,28 +5,25 @@
         "name": "Pavel Dymkov",
         "email": "dymkov86@gmail.com"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/PavelDymkov/ngx-subscribable.git"
-    },
+    "license": "MIT",
     "scripts": {
-        "build": "ng build --prod",
-        "prettier": "prettier --write .",
+        "prepublishOnly": "exit 1",
+        "pub": "packagr",
         "start": "ng serve test",
-        "test": "ng build test && mocha projects/test/test.js"
+        "test": "ng build test && mocha test.js"
     },
     "private": true,
     "dependencies": {
-        "@angular/animations": "~12.2.13",
-        "@angular/common": "~12.2.13",
-        "@angular/compiler": "~12.2.13",
-        "@angular/core": "~12.2.13",
-        "@angular/forms": "~12.2.13",
-        "@angular/platform-browser": "~12.2.13",
-        "@angular/platform-browser-dynamic": "~12.2.13",
-        "@angular/router": "~12.2.13",
+        "@angular/animations": "~13.0.2",
+        "@angular/common": "~13.0.2",
+        "@angular/compiler": "~13.0.2",
+        "@angular/core": "~13.0.2",
+        "@angular/forms": "~13.0.2",
+        "@angular/platform-browser": "~13.0.2",
+        "@angular/platform-browser-dynamic": "~13.0.2",
         "connect": "^3.7.0",
         "mocha": "^8.2.1",
+        "npm-packagr": "^1.0.16",
         "puppeteer": "^5.5.0",
         "puppeteer-io": "^1.12.0",
         "rxjs": "~6.6.0",
@@ -35,14 +32,14 @@
         "zone.js": "~0.11.4"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~12.2.13",
-        "@angular/cli": "~12.2.13",
-        "@angular/compiler-cli": "~12.2.13",
+        "@angular-devkit/build-angular": "~13.0.3",
+        "@angular/cli": "~13.0.3",
+        "@angular/compiler-cli": "~13.0.2",
         "@types/node": "^12.11.1",
-        "ng-packagr": "^12.2.5",
+        "ng-packagr": "^13.0.8",
         "prettier": "^2.1.1",
         "ts-node": "~8.3.0",
         "tslint": "~6.1.0",
-        "typescript": "~4.3.5"
+        "typescript": "~4.4.4"
     }
 }

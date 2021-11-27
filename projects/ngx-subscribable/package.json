@@ -1,6 +1,21 @@
 {
     "name": "ngx-subscribable",
-    "version": "1.0.1",
+    "version": "1.0.3",
+    "description": "",
+    "author": {
+        "name": "Pavel Dymkov",
+        "email": "dymkov86@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PavelDymkov/ngx-subscribable.git"
+    },
+    "keywords": [
+        "angular",
+        "unsubscribe",
+        "rxjs"
+    ],
     "peerDependencies": {
         "@angular/core": "*",
         "rxjs": "*"

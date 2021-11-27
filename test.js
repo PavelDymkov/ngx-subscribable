@@ -13,7 +13,7 @@ describe("It...", () => {
 
     beforeEach(async () => {
         const app = connect();
-        const root = join(__dirname, "../../dist/test");
+        const root = join(__dirname, "test-app");
 
         app.use(static(root));
 
@@ -28,7 +28,7 @@ describe("It...", () => {
         server.close();
     });
 
-    it("should test SubscribableComponent", async () => {
+    it("should test SubscribableComponent, SubscribableDirective and SubscribableService", async () => {
         const page = await browser.newPage();
 
         await io({
@@ -40,7 +40,9 @@ describe("It...", () => {
                 await page.click("button");
             },
             async output({ message }) {
-                await message("unsubscribe");
+                await message("unsubscribe: service");
+                await message("unsubscribe: component");
+                await message("unsubscribe: directive");
 
                 ok(true);
             },

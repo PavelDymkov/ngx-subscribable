@@ -1,10 +1,7 @@
 import { Component, OnDestroy } from "@angular/core";
-
 import { Subscription } from "rxjs";
 
-@Component({
-    template: "",
-})
+@Component({ template: "" })
 export abstract class SubscribableComponent implements OnDestroy {
     protected subscriptions: Subscription[] = [];
 

@@ -1,8 +1,8 @@
-import { Directive, OnDestroy } from "@angular/core";
+import { Injectable, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 
-@Directive()
-export abstract class SubscribableDirective implements OnDestroy {
+@Injectable()
+export abstract class SubscribableService implements OnDestroy {
     protected subscriptions: Subscription[] = [];
 
     ngOnDestroy(): void {
